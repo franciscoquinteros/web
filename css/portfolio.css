@@ -156,3 +156,11 @@ h2 { font: 44px/1.03 var(--serif); letter-spacing: -.6px; }
   .experience h2 { font-size: 29px; }
   a { text-decoration: none; }
 }
+
+/* Product images retain their full frame and can be opened at original size. */
+.product-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: 16px; margin-top: 24px; min-width: 0; }
+.project-row > .product-gallery { grid-column: 2 / -1; margin-top: 0; }
+.product-gallery figure { margin: 0; min-width: 0; }
+.product-gallery a { display: block; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: white; }
+.product-gallery img { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: contain; }
+.product-gallery figcaption { margin-top: 7px; font-size: 11px; color: var(--muted); }

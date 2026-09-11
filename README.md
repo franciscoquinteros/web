@@ -17,4 +17,6 @@ Las cifras de aproximadamente 50 usuarios de SELLR y más de 100 de Vibook fuero
 
 Campaign Manager se describe a partir de la documentación y estructura del proyecto local `campaign-manage`. Se incluye sin enlace al repositorio por indicación de Francisco, sin cifras de usuarios ni afirmaciones sobre su despliegue.
 
+Imágenes: capturas del 11 de septiembre de 2026 de las páginas públicas enlazadas de Emilia, Vibook, ePagos, Portal Expensas y la ficha oficial de SELLR en Google Play. La captura de Campaign Manager corresponde a su página de presentación ejecutada en una copia local, sin datos de clientes. Las imágenes se guardan en `images/products/` y se pueden ampliar. La automatización financiera se retiró por indicación de Francisco.
+
 El rediseño conserva el dominio, la verificación de Meta, los recursos anteriores y `privacy.html`. Su reversión se limita al commit del portfolio, sin modificar los proyectos referenciados.
