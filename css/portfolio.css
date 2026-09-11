@@ -69,6 +69,10 @@ h2 { font: 44px/1.03 var(--serif); letter-spacing: -.6px; }
 .project-copy > p:first-child { color: var(--ink); }
 .project-copy .contribution { margin-top: 10px; font-size: 13px; }
 .project-copy .stack { margin-top: 15px; }
+.project-metric { border-left: 2px solid var(--accent); padding-left: 12px; margin-top: 16px; font-size: 13px; }
+.project-metric strong { color: var(--accent); font-weight: 600; }
+.project-copy .project-links { margin-top: 15px; flex-wrap: wrap; }
+.project-note { margin-top: 15px; font-size: 11px; color: var(--muted); }
 .open-source { display: flex; align-items: center; gap: 23px; margin-top: 28px; padding: 24px 0; text-decoration: none; }
 .code-mark { font-size: 21px; letter-spacing: -3px; color: var(--accent); min-width: 31px; }
 .open-source .eyebrow { display: block; font-size: 9px; margin-bottom: 5px; }
