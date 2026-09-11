@@ -15,4 +15,6 @@ La página describe aportes de ingeniería y no atribuye propiedad empresarial. 
 
 Las cifras de aproximadamente 50 usuarios de SELLR y más de 100 de Vibook fueron informadas por Francisco el 11 de septiembre de 2026. No se presentan como usuarios activos mensuales ni como cifras verificadas mediante analítica. La cifra de más de 50.000 propietarios e inquilinos de Portal Expensas corresponde a las apps del producto y proviene del [caso publicado por 404 Crafters](https://www.proyecto404.com/portfolio/portal-expensas/); no se atribuye al módulo administrativo, a ePagos ni al aporte individual de Francisco. No hay un recuento actualizado de usuarios para los demás proyectos.
 
+Campaign Manager se describe a partir de la documentación y estructura del proyecto local `campaign-manage`. Se incluye sin enlace al repositorio por indicación de Francisco, sin cifras de usuarios ni afirmaciones sobre su despliegue.
+
 El rediseño conserva el dominio, la verificación de Meta, los recursos anteriores y `privacy.html`. Su reversión se limita al commit del portfolio, sin modificar los proyectos referenciados.
