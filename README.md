@@ -11,7 +11,7 @@ Sitio estático en español: presentación, proyectos seleccionados, experiencia
 
 Para previsualizar: `python -m http.server 4173 --bind 127.0.0.1`.
 
-La página describe aportes de ingeniería y no atribuye propiedad empresarial. Los proyectos privados no enlazan su código. SELLR enlaza su ficha oficial de Google Play; su antiguo dominio no estaba disponible al revisar el contenido.
+La página presenta los productos de Francisco, según su indicación, sin bloques separados de «Mi aporte». Los proyectos privados no enlazan su código. SELLR enlaza su ficha oficial de Google Play; su antiguo dominio no estaba disponible al revisar el contenido.
 
 Las cifras de más de 100 usuarios de SELLR y más de 200 agencias que ya probaron Vibook fueron informadas por Francisco. No se presentan como usuarios activos mensuales ni como cifras verificadas mediante analítica. La cifra de más de 50.000 propietarios e inquilinos de Portal Expensas corresponde a las apps del producto y proviene del [caso publicado por 404 Crafters](https://www.proyecto404.com/portfolio/portal-expensas/); no se atribuye al módulo administrativo, a ePagos ni al aporte individual de Francisco. No hay un recuento actualizado de usuarios para los demás proyectos.
 
@@ -21,6 +21,6 @@ Imágenes: capturas del 11 de septiembre de 2026 de las páginas públicas enlaz
 
 El rediseño conserva el dominio, la verificación de Meta, los recursos anteriores y `privacy.html`. Su reversión se limita al commit del portfolio, sin modificar los proyectos referenciados.
 
-LeadForge y Vegan Map: descripciones basadas en el código local. LeadForge usa una captura del pipeline local con datos ficticios identificados como ejemplos; la URL indicada en GitHub abre Noverionex CRM, por lo que se omite. Vegan Map usa una captura del listado móvil público en https://vegan-map.vercel.app/; el mapa de Google presenta un error y no se enlaza como demo verificada. No se publican cifras de adopción para estos productos.
+LeadForge y Vegan Map: descripciones basadas en el código local. LeadForge usa una captura del scraper local con datos ficticios identificados como ejemplos; la URL indicada en GitHub abre Noverionex CRM, por lo que se omite. Vegan Map usa una captura del listado móvil público en https://vegan-map.vercel.app/; el mapa de Google presenta un error y no se enlaza como demo verificada. No se publican cifras de adopción para estos productos.
 
 La captura desktop de Vegan Map está pendiente: tanto la clave de la página publicada como la configuración local devuelven `ExpiredKeyMapError`. Se conserva temporalmente la imagen móvil anterior.
