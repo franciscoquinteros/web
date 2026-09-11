@@ -21,4 +21,6 @@ Imágenes: capturas del 11 de septiembre de 2026 de las páginas públicas enlaz
 
 El rediseño conserva el dominio, la verificación de Meta, los recursos anteriores y `privacy.html`. Su reversión se limita al commit del portfolio, sin modificar los proyectos referenciados.
 
-LeadForge y Vegan Map: descripciones basadas en el código local. LeadForge usa una captura del componente de acceso local; la URL indicada en GitHub abre Noverionex CRM, por lo que se omite. Vegan Map usa una captura del listado móvil público en https://vegan-map.vercel.app/; el mapa de Google presenta un error y no se enlaza como demo verificada. No se publican cifras de adopción para estos productos.
+LeadForge y Vegan Map: descripciones basadas en el código local. LeadForge usa una captura del pipeline local con datos ficticios identificados como ejemplos; la URL indicada en GitHub abre Noverionex CRM, por lo que se omite. Vegan Map usa una captura del listado móvil público en https://vegan-map.vercel.app/; el mapa de Google presenta un error y no se enlaza como demo verificada. No se publican cifras de adopción para estos productos.
+
+La captura desktop de Vegan Map está pendiente: tanto la clave de la página publicada como la configuración local devuelven `ExpiredKeyMapError`. Se conserva temporalmente la imagen móvil anterior.
