@@ -20,3 +20,5 @@ Campaign Manager se describe a partir de la documentación y estructura del proy
 Imágenes: capturas del 11 de septiembre de 2026 de las páginas públicas enlazadas de Emilia, Vibook, ePagos, Portal Expensas y la ficha oficial de SELLR en Google Play. La captura de Campaign Manager corresponde a su página de presentación ejecutada en una copia local, sin datos de clientes. Las imágenes se guardan en `images/products/` y se pueden ampliar. La automatización financiera se retiró por indicación de Francisco.
 
 El rediseño conserva el dominio, la verificación de Meta, los recursos anteriores y `privacy.html`. Su reversión se limita al commit del portfolio, sin modificar los proyectos referenciados.
+
+LeadForge y Vegan Map: descripciones basadas en el código local. LeadForge usa una captura del componente de acceso local; la URL indicada en GitHub abre Noverionex CRM, por lo que se omite. Vegan Map usa una captura del listado móvil público en https://vegan-map.vercel.app/; el mapa de Google presenta un error y no se enlaza como demo verificada. No se publican cifras de adopción para estos productos.
