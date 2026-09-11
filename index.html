@@ -1,234 +1,108 @@
-<!DOCTYPE html>
-<html lang="es">
-
+<!doctype html>
+<html lang="es-AR">
 <head>
   <meta charset="utf-8">
-  <meta name="facebook-domain-verification" content="v795szyqsg3tusw31yyqe8997yycjq" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Francisco Quinteros</title>
-  <meta name="description" content="Francisco Quinteros — Argentina">
-  <meta name="theme-color" content="#05070d">
-
-  <link rel="icon" type="image/png" href="images/Image.png">
-
-  <!-- Fuentes -->
+  <meta name="facebook-domain-verification" content="v795szyqsg3tusw31yyqe8997yycjq">
+  <title>Francisco Quinteros — Software Engineer</title>
+  <meta name="description" content="Senior Software Engineer en Buenos Aires. Productos web y mobile, inteligencia artificial e integraciones. Conocé mi trabajo en turismo, pagos y automatización.">
+  <meta name="theme-color" content="#f8f7f3">
+  <link rel="canonical" href="https://www.franciscoquinteros.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:title" content="Francisco Quinteros — Ingeniería con mirada de producto">
+  <meta property="og:description" content="Construyo productos web y mobile, integro IA y conecto sistemas. Desde Buenos Aires, Argentina.">
+  <meta property="og:url" content="https://www.franciscoquinteros.com/">
+  <meta property="og:image" content="https://www.franciscoquinteros.com/images/Image.png">
+  <meta property="og:image:alt" content="Avatar de Francisco Quinteros detrás de una computadora">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Francisco Quinteros — Software Engineer">
+  <meta name="twitter:description" content="Ingeniería con mirada de producto. Web, mobile, IA e integraciones.">
+  <meta name="twitter:image" content="https://www.franciscoquinteros.com/images/Image.png">
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-    rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #05070d;
-      --fg: #f5f3ee;
-      --muted: rgba(245, 243, 238, 0.55);
-      --gold: #f6b40e;
-      --sky: #74acdf;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    html, body { height: 100%; }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: "JetBrains Mono", ui-monospace, monospace;
-      overflow: hidden;
-      position: relative;
-    }
-
-    /* Lienzo 3D a pantalla completa, detrás de todo */
-    #globe {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-      z-index: 0;
-      opacity: 0;
-      animation: fade-canvas 1.8s 0.2s ease forwards;
-    }
-
-    /* Viñeta suave para dar profundidad y contraste al texto */
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      background:
-        radial-gradient(120% 80% at 50% 42%, transparent 55%, rgba(0, 0, 0, 0.55) 100%),
-        linear-gradient(to bottom, rgba(5, 7, 13, 0.35) 0%, transparent 22%, transparent 70%, rgba(5, 7, 13, 0.55) 100%);
-    }
-
-    /* Grano cinematográfico */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: 2;
-      pointer-events: none;
-      opacity: 0.05;
-      mix-blend-mode: soft-light;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    }
-
-    .hero {
-      position: relative;
-      z-index: 3;
-      height: 100vh;
-      height: 100svh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: clamp(2.2rem, 7vh, 5rem) 1.5rem;
-      pointer-events: none; /* dejamos pasar el arrastre al globo */
-    }
-
-    .intro {
-      width: 100%;
-      text-shadow: 0 2px 30px rgba(0, 0, 0, 0.85), 0 0 14px rgba(0, 0, 0, 0.6);
-      animation: rise 1.1s 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    h1 {
-      font-family: "Orbitron", sans-serif;
-      font-weight: 600;
-      font-size: clamp(1.8rem, 5.2vw, 3.8rem);
-      line-height: 1.15;
-      letter-spacing: 0.02em;
-      overflow-wrap: break-word;
-    }
-
-    .origin {
-      margin-top: 1.1rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.7em;
-      font-size: clamp(0.7rem, 1.6vw, 0.82rem);
-      font-weight: 500;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding-left: 0.3em; /* compensa el letter-spacing final */
-    }
-
-    .flag {
-      width: auto;
-      height: 1.35em;
-      border-radius: 3px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
-      flex: none;
-    }
-
-    .contact {
-      pointer-events: auto;
-      margin-top: clamp(1.8rem, 4vh, 2.6rem);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6em;
-      padding: 0.75em 1.5em;
-      border: 1px solid rgba(245, 243, 238, 0.22);
-      border-radius: 999px;
-      background: rgba(245, 243, 238, 0.03);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      color: var(--fg);
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: border-color 0.35s ease, color 0.35s ease, background 0.35s ease, box-shadow 0.35s ease;
-      animation: rise 1.1s 0.75s cubic-bezier(0.16, 1, 0.3, 1) both;
-    }
-
-    .contact svg { width: 15px; height: 15px; fill: currentColor; }
-
-    .contact:hover {
-      border-color: rgba(246, 180, 14, 0.7);
-      color: var(--gold);
-      background: rgba(246, 180, 14, 0.08);
-      box-shadow: 0 0 30px rgba(246, 180, 14, 0.18);
-    }
-
-    @keyframes rise {
-      from { opacity: 0; transform: translateY(22px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fade-canvas {
-      to { opacity: 1; }
-    }
-
-    /* Ajustes para pantallas chicas */
-    @media (max-width: 430px) {
-      h1 { font-size: 1.6rem; letter-spacing: 0.01em; }
-      .origin { letter-spacing: 0.24em; padding-left: 0.24em; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      #globe, .intro, .contact { animation: none; opacity: 1; }
-    }
-  </style>
-</head>
-
-<body>
-  <canvas id="globe"></canvas>
-
-  <main class="hero">
-    <header class="intro">
-      <h1>Francisco Quinteros</h1>
-      <p class="origin">
-        <svg class="flag" viewBox="0 0 30 20" role="img" aria-label="Bandera de Argentina"
-          xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <clipPath id="flagClip"><rect width="30" height="20" rx="2.5" /></clipPath>
-          </defs>
-          <g clip-path="url(#flagClip)">
-            <rect width="30" height="20" fill="#74acdf" />
-            <rect y="6.667" width="30" height="6.667" fill="#ffffff" />
-            <g transform="translate(15,10)" stroke="#f6b40e" stroke-width="0.7" stroke-linecap="round">
-              <line y1="-4.2" y2="4.2" />
-              <line y1="-4.2" y2="4.2" transform="rotate(22.5)" />
-              <line y1="-4.2" y2="4.2" transform="rotate(45)" />
-              <line y1="-4.2" y2="4.2" transform="rotate(67.5)" />
-              <line y1="-4.2" y2="4.2" transform="rotate(90)" />
-              <line y1="-4.2" y2="4.2" transform="rotate(112.5)" />
-              <line y1="-4.2" y2="4.2" transform="rotate(135)" />
-              <line y1="-4.2" y2="4.2" transform="rotate(157.5)" />
-            </g>
-            <circle cx="15" cy="10" r="2.1" fill="#f6b40e" stroke="#e59a12" stroke-width="0.3" />
-          </g>
-          <rect x="0.4" y="0.4" width="29.2" height="19.2" rx="2.3" fill="none"
-            stroke="rgba(255,255,255,0.25)" stroke-width="0.6" />
-        </svg>
-        <span>Argentina</span>
-      </p>
-    </header>
-
-    <a class="contact" href="https://www.linkedin.com/in/francisco-quinteros/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.55C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.72C24 .77 23.2 0 22.22 0z" />
-      </svg>
-      Contact
-    </a>
-  </main>
-
-  <script type="importmap">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/portfolio.css">
+  <script type="application/ld+json">
     {
-      "imports": {
-        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-      }
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Francisco Quinteros",
+      "url": "https://www.franciscoquinteros.com/",
+      "jobTitle": "Senior Software Engineer",
+      "sameAs": ["https://github.com/franciscoquinteros", "https://www.linkedin.com/in/francisco-quinteros/"],
+      "knowsAbout": ["Software engineering", "Web development", "Mobile development", "Artificial intelligence", "API integration"]
     }
   </script>
-  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="monogram" href="#contenido" aria-label="Francisco Quinteros, inicio">fq<span>.</span></a>
+      <nav aria-label="Navegación principal">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#contacto">Contacto <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+    <main id="contenido">
+      <section class="intro" aria-labelledby="nombre">
+        <div class="eyebrow"><span class="location-dot" aria-hidden="true"></span> Buenos Aires, Argentina</div>
+        <div class="intro-title">
+          <h1 id="nombre">Francisco <br>Quinteros<span class="accent">.</span></h1>
+          <img class="avatar" src="images/Image.png" alt="Mi avatar, trabajando detrás de una computadora" width="170" height="170" fetchpriority="high">
+        </div>
+        <p class="intro-role">Software Engineer.<br><span>Con mirada de producto.</span></p>
+        <p class="intro-description">Construyo productos web y mobile, integro inteligencia artificial y conecto sistemas para resolver problemas de negocio. Me involucro desde la primera idea hasta su funcionamiento en producción.</p>
+        <div class="intro-links">
+          <a class="button" href="#proyectos">Conocé mi trabajo <span aria-hidden="true">↓</span></a>
+          <a class="text-link" href="https://www.linkedin.com/in/francisco-quinteros/">LinkedIn <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="https://github.com/franciscoquinteros">GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="intro-footer"><span>8+ años de experiencia</span><span>Web · Mobile · IA · Integraciones</span></div>
+      </section>
+      <section id="proyectos" class="section" aria-labelledby="proyectos-titulo">
+        <div class="section-heading"><p class="eyebrow">01 / Trabajo seleccionado</p><h2 id="proyectos-titulo">Problemas reales.<br>Productos concretos.</h2></div>
+        <article class="featured-project" aria-labelledby="emilia-titulo">
+          <div class="project-kicker"><span>Turismo / IA aplicada</span><span>01</span></div>
+          <h3 id="emilia-titulo">Emilia <span class="ampersand">&</span> Vibook</h3>
+          <p class="project-lead">De una conversación a una cotización de viaje.</p>
+          <p>Emilia permite buscar vuelos y hoteles en lenguaje natural. Vibook conecta la gestión comercial, las operaciones y las finanzas de agencias de viajes.</p>
+          <p class="contribution"><strong>Mi aporte</strong> Desarrollo e integración de búsquedas, proveedores, cotizaciones y flujos del CRM.</p>
+          <div class="project-bottom"><span class="stack">TypeScript · React · Node.js · PostgreSQL · IA</span><div class="project-links"><a href="https://emilia.vibook.ai/">Emilia <span aria-hidden="true">↗</span></a><a href="https://vibook.ai/">Vibook <span aria-hidden="true">↗</span></a></div></div>
+        </article>
+        <article class="project-row" aria-labelledby="sellr-titulo">
+          <div class="project-index" aria-hidden="true">02</div>
+          <div class="project-name"><p class="eyebrow">Mobile / Ticketing</p><h3 id="sellr-titulo">SELLR</h3></div>
+          <div class="project-copy"><p>Descubrir eventos, comprar entradas y tener los tickets en el celular.</p><p class="contribution"><strong>Mi aporte</strong> Desarrollo de la aplicación móvil y sus integraciones de autenticación, pagos y entradas con QR.</p><p class="stack">Flutter · Firebase · Pagos · QR</p></div>
+        </article>
+        <article class="project-row" aria-labelledby="pagos-titulo">
+          <div class="project-index" aria-hidden="true">03</div>
+          <div class="project-name"><p class="eyebrow">Software para empresas</p><h3 id="pagos-titulo">ePagos <span class="small-amp">&</span> <br>Portal Expensas</h3></div>
+          <div class="project-copy"><p>Herramientas para gestionar cobros recurrentes y la administración de consorcios.</p><p class="contribution"><strong>Mi aporte</strong> Evolución de interfaces y flujos de gestión sobre aplicaciones existentes, con foco en claridad y consistencia.</p><p class="stack">PHP · React · TypeScript · GraphQL</p></div>
+        </article>
+        <article class="project-row" aria-labelledby="automation-titulo">
+          <div class="project-index" aria-hidden="true">04</div>
+          <div class="project-name"><p class="eyebrow">Integraciones / Operaciones</p><h3 id="automation-titulo">Automatización <br>financiera</h3></div>
+          <div class="project-copy"><p>Convertir mensajes y comprobantes de WhatsApp en información operativa organizada.</p><p class="contribution"><strong>Mi aporte</strong> Desarrollo de procesamiento de mensajes, validaciones e integración con registros y documentos de la operación.</p><p class="stack">NestJS · TypeScript · WhatsApp · Microsoft 365</p></div>
+        </article>
+        <a class="open-source" href="https://github.com/franciscoquinteros/mcp-mercado-bursatil-argentino">
+          <span class="code-mark" aria-hidden="true">&lt;/&gt;</span><span><span class="eyebrow">También construyo en abierto</span><strong>MCP del mercado bursátil argentino</strong><span class="oss-description">Un experimento en Python para consultar y comparar acciones desde asistentes de IA.</span></span><span class="oss-arrow" aria-hidden="true">↗</span>
+        </a>
+      </section>
+      <section id="experiencia" class="section experience" aria-labelledby="experiencia-titulo">
+        <div><p class="eyebrow">02 / Experiencia</p><h2 id="experiencia-titulo">Criterio técnico.<br>Contexto de negocio.</h2></div>
+        <div class="experience-copy"><p>Soy Senior Software Engineer, con más de 8 años de experiencia. Trabajo en <a href="https://www.linkedin.com/company/404-crafters/">404 Crafters</a> y desarrollo proyectos que conectan producto, arquitectura e implementación.</p><p>Mi trabajo cruza turismo, pagos, gestión empresarial y aplicaciones móviles. Me interesa entender cómo trabaja la gente y construir herramientas que encajen en ese día a día.</p><a class="text-link" href="https://www.linkedin.com/in/francisco-quinteros/">Ver trayectoria en LinkedIn <span aria-hidden="true">↗</span></a></div>
+      </section>
+      <section id="contacto" class="section contact" aria-labelledby="contacto-titulo">
+        <p class="eyebrow">03 / Hablemos</p>
+        <h2 id="contacto-titulo">¿Qué estás<br><em>construyendo?</em></h2>
+        <div class="contact-bottom"><p>Un producto nuevo, una integración difícil<br>o un equipo que necesita experiencia.</p><a class="button" href="https://www.linkedin.com/in/francisco-quinteros/">Escribime en LinkedIn <span aria-hidden="true">↗</span></a></div>
+      </section>
+    </main>
+    <footer class="site-footer"><span>Francisco Quinteros · Buenos Aires</span><a href="https://github.com/franciscoquinteros">GitHub <span aria-hidden="true">↗</span></a></footer>
+  </div>
 </body>
-
 </html>
